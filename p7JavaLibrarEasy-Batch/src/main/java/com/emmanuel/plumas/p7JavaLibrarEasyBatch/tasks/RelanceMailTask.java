@@ -38,10 +38,7 @@ public class RelanceMailTask {
 		// ApiProxy Récuperer la liste des adresses mail des utilisateurs dont le prêt est arrivé à son terme
 		List<String> userEntitiesMail = getMailUserOutOfTimeBorrow();
 		
-		
-		
-		// Pour chaque utilisateurs, envoyer un mail de relance
-		
+				
 		//Paramètres d'initialisation
 		Properties prop = new Properties();
 		prop.put("mail.smtp.auth", true);
@@ -77,8 +74,7 @@ public class RelanceMailTask {
 			 
 			message.setContent(multipart);	
 			
-			try {
-		         
+			try {        
 		         Transport.send(message);
 		         System.out.println("Message envoyé avec succès....");
 				} catch (MessagingException mex) {

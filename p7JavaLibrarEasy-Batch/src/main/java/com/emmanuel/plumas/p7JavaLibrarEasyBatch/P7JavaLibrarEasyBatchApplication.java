@@ -1,5 +1,7 @@
 package com.emmanuel.plumas.p7JavaLibrarEasyBatch;
 
+import java.text.ParseException;
+
 import javax.mail.MessagingException;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +12,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 
+import com.emmanuel.plumas.p7JavaLibrarEasyBatch.tasks.CreationBorrow;
 import com.emmanuel.plumas.p7JavaLibrarEasyBatch.tasks.RelanceMailTask;
 
 @EnableScheduling
@@ -21,14 +24,19 @@ public class P7JavaLibrarEasyBatchApplication {
 	@Qualifier("relanceMailTask")
 	private RelanceMailTask relanceMailTask;
 	
+	@Autowired
+	@Qualifier("creationBorrow")
+	private CreationBorrow creationBorrow;
+	
 	public static void main(String[] args) {
 		SpringApplication.run(P7JavaLibrarEasyBatchApplication.class, args);
 	}
 
 	@Scheduled(fixedDelay=10000)
-	public void run() throws MessagingException  {
+	public void run() throws MessagingException, ParseException  {
 		System.out.println("lancement du batch");
-		relanceMailTask.execute();
+		//relanceMailTask.execute();
+		creationBorrow.execute();
 	}
 
 }
