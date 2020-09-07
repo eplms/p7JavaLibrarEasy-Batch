@@ -12,7 +12,7 @@
 	<artifactId>p7JavaLibrarEasy-Batch</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>p7JavaLibrarEasy-Batch</name>
-	<description>p7 Batch</description>
+	<description>Projet DA JAVA P7 Batch</description>
 
 	<properties>
 		<java.version>1.8</java.version>
