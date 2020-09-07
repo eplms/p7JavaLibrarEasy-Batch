@@ -64,7 +64,8 @@ public class RelanceMailTask {
 			  Message.RecipientType.TO, InternetAddress.parse(userEntityMail));
 			message.setSubject("Votre emprunt de livre");
 			 
-			String msg = "Vous avez un livre à nous rendre !";
+			String msg = "Bonjour, Merci de bien vouloir nous rendre le en votre possession."
+					+ "un autre lecteur l'attend peut-être ....";
 
 			MimeBodyPart mimeBodyPart = new MimeBodyPart();
 			mimeBodyPart.setContent(msg, "text/html");
