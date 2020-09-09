@@ -25,9 +25,9 @@ public class P7JavaLibrarEasyBatchApplication {
 	@Qualifier("relanceMailTask")
 	private RelanceMailTask relanceMailTask;
 	
-	@Autowired
+	/* @Autowired
 	@Qualifier("CodagePasswordTask")
-	private CodagePasswordTask codagePasswordTask;
+	private CodagePasswordTask codagePasswordTask; */
 	
 	public static void main(String[] args) {
 		SpringApplication.run(P7JavaLibrarEasyBatchApplication.class, args);
@@ -36,8 +36,8 @@ public class P7JavaLibrarEasyBatchApplication {
 	@Scheduled(fixedDelay=1000000000)
 	public void run() throws MessagingException  {
 		System.out.println("lancement du batch");
-		//relanceMailTask.execute();
-		codagePasswordTask.execute();
+		relanceMailTask.execute();
+		//codagePasswordTask.execute();
 	}
 
 }

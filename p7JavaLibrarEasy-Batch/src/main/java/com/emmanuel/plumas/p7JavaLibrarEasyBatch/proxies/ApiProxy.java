@@ -24,4 +24,5 @@ public interface ApiProxy{
 	
 	@PostMapping(value="libraryUser/update")
 	public void upDateLibraryUser(@RequestBody UserEntity userEntity);
+	
 }
