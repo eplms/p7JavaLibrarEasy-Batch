@@ -12,7 +12,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 
-import com.emmanuel.plumas.p7JavaLibrarEasyBatch.tasks.CodagePasswordTask;
+//import com.emmanuel.plumas.p7JavaLibrarEasyBatch.tasks.CodagePasswordTask;
 //import com.emmanuel.plumas.p7JavaLibrarEasyBatch.tasks.CreationBorrow;
 import com.emmanuel.plumas.p7JavaLibrarEasyBatch.tasks.RelanceMailTask;
 
