@@ -12,6 +12,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 
+import com.emmanuel.plumas.p7JavaLibrarEasyBatch.tasks.CodagePasswordTask;
 //import com.emmanuel.plumas.p7JavaLibrarEasyBatch.tasks.CreationBorrow;
 import com.emmanuel.plumas.p7JavaLibrarEasyBatch.tasks.RelanceMailTask;
 
@@ -24,14 +25,19 @@ public class P7JavaLibrarEasyBatchApplication {
 	@Qualifier("relanceMailTask")
 	private RelanceMailTask relanceMailTask;
 	
+	@Autowired
+	@Qualifier("CodagePasswordTask")
+	private CodagePasswordTask codagePasswordTask;
+	
 	public static void main(String[] args) {
 		SpringApplication.run(P7JavaLibrarEasyBatchApplication.class, args);
 	}
 
-	@Scheduled(fixedDelay=10000)
+	@Scheduled(fixedDelay=1000000000)
 	public void run() throws MessagingException  {
 		System.out.println("lancement du batch");
-		relanceMailTask.execute();
+		//relanceMailTask.execute();
+		codagePasswordTask.execute();
 	}
 
 }
