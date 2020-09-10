@@ -46,15 +46,15 @@ public class RelanceMailTask {
 	
 			//Création de la session de connection avec le serveur de mail et Authentification
 			Session session = Session.getInstance(prop, new Authenticator() {
-			    @Override
-			    protected PasswordAuthentication getPasswordAuthentication() {
-			        return new PasswordAuthentication("epika@free.fr", "PETIL33");
-			    }
-				});
+					@Override
+					protected PasswordAuthentication getPasswordAuthentication() {
+						return new PasswordAuthentication("epika@free.fr", "PETIL33");
+			    		}
+					});
+			//Création et envoir de message pour chaque emprunt hors limites
 			for(BorrowEntity borrowEntity : borrowEntities) {
-				//Création et envoi du message
+			
 				Message message = new MimeMessage(session);
-	
 				
 				message.setFrom(new InternetAddress("epika@free.fr"));
 				message.setRecipients(
@@ -86,13 +86,13 @@ public class RelanceMailTask {
 			         System.out.println("Message envoyé avec succès....");
 					} catch (MessagingException mex) {
 						mex.printStackTrace();
+						}
 					}
+		
+				} else {
+				System.out.println("Pas de message à envoyer");
 				}
 		
-			} else {
-				System.out.println("Pas de message à envoyer");
 			}
-		
-		}
 	
-}
+		}
