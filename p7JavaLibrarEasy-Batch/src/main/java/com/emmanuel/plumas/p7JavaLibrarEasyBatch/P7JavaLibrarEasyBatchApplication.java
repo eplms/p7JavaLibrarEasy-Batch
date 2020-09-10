@@ -30,7 +30,7 @@ public class P7JavaLibrarEasyBatchApplication {
 	 * Si 24 hPP, fixexDelay = 86 400 000	
 	 * Si 10 secondes pour test, fixedDelay = 10 000
 	 */
-	@Scheduled(fixedDelay=1000000000)
+	@Scheduled(fixedDelay=10000)
 	public void run() throws MessagingException  {
 		System.out.println("lancement du batch");
 		relanceMailTask.execute();
